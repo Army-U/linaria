@@ -43,7 +43,7 @@ export default function webpack5Loader(
   // There is this.resolve, but it's asynchronous
   // Another option is to read the webpack.config.js, but it won't work for programmatic usage
   // This API is used by many loaders/plugins, so hope we're safe for a while
-  const webpackResolveOptions = this._compilation?.options.resolve;
+  const webpackResolveOptions = this._compilation?.options.resolve ?? {};
 
   // Resolved configuration contains empty list of extensions as a default value
   // https://github.com/callstack/linaria/issues/855
